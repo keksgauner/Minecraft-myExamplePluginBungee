@@ -3,6 +3,7 @@ package myplugin;
 import myplugin.command.Command_KeksGauner;
 import myplugin.external.InitializeManager;
 import myplugin.listener.Event_Join;
+import myplugin.utils.Data;
 import net.md_5.bungee.api.plugin.Plugin;
 
 /**
@@ -18,9 +19,10 @@ public final class Main extends Plugin {
     @Override
     public void onEnable() {
         instance = this; plugin = this;
-        InitializeManager im = new InitializeManager();
+        Data.init();
 
-        // Example Commands
+        InitializeManager im = new InitializeManager();
+        // Register a Commands
         im.registerCommand(this, new Command_KeksGauner("keksgauner"));
 
         // Register a Event

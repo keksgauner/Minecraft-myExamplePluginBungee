@@ -28,11 +28,12 @@ public class Event_Join implements Listener {
             public void run() {
                 // Example of a try and catch
                 try {
+                    // This text must be a BaseComponent! Thats why I use TextComponentBuilder.create
                     p.sendMessage(TextComponentBuilder.create(""));
                     p.sendMessage(TextComponentBuilder.create("Folge uns auf onlyfans mit /onlyfans"));
                     p.sendMessage(TextComponentBuilder.create(""));
                 } catch (Exception e) {}
             }
-        }, 100, TimeUnit.SECONDS);
+        }, 1, TimeUnit.SECONDS);
     }
 }
