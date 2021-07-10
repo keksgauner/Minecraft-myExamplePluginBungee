@@ -16,7 +16,7 @@ import java.util.logging.Level;
 /**
  * @author KeksGauner
  */
-public class ConfigAccessor {
+public class ConfigAccessorBungee {
 
     private final String fileName;
     private final Plugin plugin;
@@ -24,7 +24,7 @@ public class ConfigAccessor {
     private File configFile;
     private Configuration fileConfiguration;
 
-    public ConfigAccessor(Plugin plugin, String fileName) {
+    public ConfigAccessorBungee(Plugin plugin, String fileName) {
         if (plugin == null)
             throw new IllegalArgumentException("plugin cannot be null");
         this.plugin = plugin;
