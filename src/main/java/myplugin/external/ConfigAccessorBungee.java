@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
+import java.util.Collection;
 import java.util.logging.Level;
 
 
@@ -39,16 +40,19 @@ public class ConfigAccessorBungee {
 
     public void reloadConfig() {
         try {
-        fileConfiguration = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);
+            fileConfiguration = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         // Look for defaults in the jar
         InputStream defConfigStream = plugin.getResourceAsStream(fileName);
         if (defConfigStream != null) {
-            Configuration defConfig = YamlConfiguration.getProvider(YamlConfiguration.class).load(new InputStreamReader(defConfigStream));
-            fileConfiguration.set(String.valueOf(configFile.toPath()), defConfig);
+            Configuration defConfig = ConfigurationProvider.getProvider(YamlConfiguration.class).load(new InputStreamReader(defConfigStream));
+            for(String key : defConfig.getKeys()) {
+                if(!fileConfiguration.contains(key)) {
+                    plugin.getLogger().log(Level.SEVERE, "Could not read config \"" + configFile + "\" check key \"" + key + "\" Did you try delete the config?", defConfig);
+                }
+            }
         }
     }
 
@@ -66,7 +70,8 @@ public class ConfigAccessorBungee {
             } catch (IOException ex) {
                 plugin.getLogger().log(Level.SEVERE, "Could not save config to " + configFile, ex);
             }
-        }
+        } else
+            plugin.getLogger().log(Level.SEVERE, "Could not save config to " + configFile, getConfig());
     }
 
     public void saveDefaultConfig() {
