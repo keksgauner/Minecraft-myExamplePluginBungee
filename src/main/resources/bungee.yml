@@ -1,4 +1,4 @@
 name: MyExamplePlugin
 version: ${project.version}
 main: myplugin.Main
-description: A
+description: A Example Plugin
