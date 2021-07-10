@@ -13,7 +13,6 @@ import java.nio.file.Files;
 import java.util.Collection;
 import java.util.logging.Level;
 
-
 /**
  * @author KeksGauner
  */

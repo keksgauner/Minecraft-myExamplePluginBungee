@@ -8,6 +8,11 @@ import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
+/**
+ * This is a example of a command
+ *
+ * @author KeksGauner
+ */
 public class Command_KeksGauner extends Command {
 
     public Command_KeksGauner(String name) {
