@@ -70,7 +70,7 @@ public class ConfigAccessorBungee {
                 plugin.getLogger().log(Level.SEVERE, "Could not save config to " + configFile, ex);
             }
         } else
-            plugin.getLogger().log(Level.SEVERE, "Could not save config to " + configFile, getConfig());
+            plugin.getLogger().log(Level.INFO, "Could not save config to " + configFile, getConfig());
     }
 
     public void saveDefaultConfig() {
