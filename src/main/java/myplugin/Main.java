@@ -1,6 +1,7 @@
 package myplugin;
 
 import myplugin.command.Command_KeksGauner;
+import myplugin.command.Command_Tabolator;
 import myplugin.external.InitializeManager;
 import myplugin.listener.Event_Join;
 import myplugin.utils.Data;
@@ -24,6 +25,7 @@ public final class Main extends Plugin {
         InitializeManager im = new InitializeManager();
         // Register a Commands
         im.registerCommand(this, new Command_KeksGauner("keksgauner"));
+        im.registerCommand(this, new Command_Tabolator("tabulator"));
 
         // Register a Event
         im.registerEvent(this, new Event_Join());

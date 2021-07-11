@@ -17,10 +17,7 @@ public class Command_KeksGauner extends Command {
 
     public Command_KeksGauner(String name) {
         super(name);
-        //this.setDescription("Is a KeksGauner Command");
-        //this.setPermission("keksgauner.use");
-        //this.setUsage("/keksgauner")
-        //this.setAliases(Arrays.asList("keksi", "mykeks","superkeks"));
+        //super(name,"keksgauner.use","keksi", "mykeks","superkeks");
     }
 
     @Override
