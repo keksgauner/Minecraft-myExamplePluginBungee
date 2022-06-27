@@ -1,3 +1,3 @@
 # Minecraft-myExamplePluginBungee
 
-Es ist ein Bungee Example Plugin by Cookieleaks
+This is a example Plugin by Keksgauner for Bungeecord
